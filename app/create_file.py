@@ -55,9 +55,11 @@ def create_path(directories: list) -> Union[str, LiteralString, bytes]:
 
 
 def fill_data(full_filepath: Union[str, LiteralString, bytes]) -> None:
+    file_exists = os.path.exists(full_filepath)
+
     with open(full_filepath, "a+") as file:
 
-        if os.path.exists(full_filepath):
+        if file_exists:
             file.write("\n")
 
         file.write(datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
