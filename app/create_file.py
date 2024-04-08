@@ -29,8 +29,7 @@ def main() -> None:
     if d_flag_is_used:
         d_args = args[args.index("-d") + 1:(args.index("-f")
                       if f_flag_is_used and args.index("-f") > args.index("-d")
-                      else None)
-                      ]
+                      else None)]
         if not len(d_args):
             print("Flag '-d' was used but no parameters were given")
             return
